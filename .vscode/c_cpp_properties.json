@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "STM32F103x6"
+            ],
+            "compilerPath": "C:/Util/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc.exe"
+        }
+    ],
+    "version": 4
+}

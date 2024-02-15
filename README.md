@@ -7,7 +7,6 @@ Since ST create a lot of barriers and obstacles for STM32 chinese clones develop
 - Far quicker startup time thanks to VSCode's lightweight
 - Enable boilerplate code generation thanks to CubeMX
 - Enable interactive debug using `"marus25.cortex-debug"`
-- 
 
 ## Installing dependencies
 
@@ -15,7 +14,26 @@ Since ST create a lot of barriers and obstacles for STM32 chinese clones develop
 - [arm-none-eabi-*](https://developer.arm.com/downloads/-/gnu-rm)
 - [VSCode extension "marus25.cortex-debug"](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
 
+# Building
 
-After build the executable, (`make -j(nproc --all)`) and fix every hardcoded path, you should be able to open VSCode and start debugging right away.
+For debug build:
+```
+# Generate Makefile
+cmake -B Debug -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
+# Building using cmake
+cmake --build Debug -j <nproc>
+# Clean project
+cmake --build Debug --target clean
+```
+
+For release build:
+```
+# Generate Makefile
+cmake -B Release -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
+# Building using cmake
+cmake --build Release -j <nproc>
+# Clean project
+cmake --build Release --target clean
+```
 
 You can open .mxproject to reconfigure and regenerate code as expected.
